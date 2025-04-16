@@ -1,0 +1,15 @@
+RewriteEngine On
+# Allow only POST and GET requests
+RewriteCond %{REQUEST_METHOD} !^(POST|GET) [NC]
+RewriteRule .* - [R=405,L]
+
+# Prevent directory listing
+Options -Indexes
+
+# Set JSON as default content type
+AddType application/json .php
+
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [L]

@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TT Dashboard - TT Travel</title>
+    <!-- Google Fonts (Poppins) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Custom TT CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar Section (With Logo and Logout) -->
+    <nav class="navbar navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../../assets/images/logo.png" alt="TT Travel Logo" width="50" class="logo">
+                <span class="brand-text">TT Travel</span>
+            </a>
+            <!-- Logout Button in Navbar -->
+            <div class="ms-auto">
+                <a href="../../../tt/index.html" id="logoutBtn" class="btn btn-outline-primary">
+                    <i class="fas fa-sign-out-alt me-2"></i>Logout
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Dashboard Section -->
+    <section class="signup-section">
+        <div class="container">
+            <h2 class="text-center mb-4"><i class="fas fa-user-shield me-2"></i> TT Dashboard</h2>
+
+            <!-- Search Passenger Section -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-8">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Search Passenger</h5>
+                            <form id="searchPassengerForm">
+                                <div class="input-group mb-3">
+                                    <input type="text" class="form-control" id="searchInput" placeholder="Enter Ticket ID or Passenger Name" required>
+                                    <button type="submit" class="btn btn-primary">Search</button>
+                                </div>
+                            </form>
+                            <div id="searchResult" class="d-none text-center"></div>
+                            <!-- Passenger List Table -->
+                            <div id="passengerList" class="mt-3 d-none">
+                                <table class="table table-hover">
+                                    <thead>
+                                        <tr>
+                                            <th>Ticket ID</th>
+                                            <th>Passenger Name</th>
+                                            <th>Source</th>
+                                            <th>Destination</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="passengerTableBody"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Face Scan Section -->
+            <div class="row justify-content-center mb-4">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body text-center">
+                            <h5 class="card-title">Face Scan Verification</h5>
+                            <div class="camera-feed-container mb-3">
+                                <div class="camera-feed" id="cameraFeed">
+                                    <p>Camera Feed Placeholder (Simulated)</p>
+                                </div>
+                            </div>
+                            <button id="startFaceScanBtn" class="btn btn-primary w-100 mb-3">
+                                <i class="fas fa-camera me-2"></i> Start Face Scan
+                            </button>
+                            <div id="faceScanResult" class="text-center"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Ticket Details Section (Hidden by Default) -->
+            <div class="row justify-content-center mb-4 d-none" id="ticketDetailsSection">
+                <div class="col-md-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title text-center">Ticket Details</h5>
+                            <div class="ticket-details-container">
+                                <p><strong>Ticket ID:</strong> <span id="ticketId"></span></p>
+                                <p><strong>Passenger Name:</strong> <span id="passengerName"></span></p>
+                                <p><strong>Source:</strong> <span id="source"></span></p>
+                                <p><strong>Destination:</strong> <span id="destination"></span></p>
+                                <p><strong>Train:</strong> <span id="train"></span></p>
+                                <p><strong>Date:</strong> <span id="date"></span></p>
+                                <p><strong>Status:</strong> <span id="status" class="badge"></span></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom TT JS -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

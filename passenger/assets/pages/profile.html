@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - FaceS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="../../assets/images/logo.png" alt="FaceS Logo" width="50" class="logo">
+                <span class="brand-text">FaceS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="ticket-booking.html"><i class="fas fa-train"></i> Book Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon" href="my-tickets.html"><i class="fas fa-ticket-alt"></i> My Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon active" href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-4" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Profile Section -->
+    <section class="signup-section profile-section">
+        <div class="container mt-5 pt-5">
+            <h1 class="text-center mb-4 text-white animate-welcome"><i class="fas fa-user"></i> My Profile</h1>
+            <div class="card shadow-lg p-4 border-0 dashboard-card">
+                <div class="row g-4">
+                    <!-- Profile Picture -->
+                    <div class="col-md-4 text-center">
+                        <div class="profile-picture-container">
+                            <img src="https://via.placeholder.com/150" alt="Profile Picture" class="rounded-circle img-fluid profile-pic animate-profile-pic" id="profilePic">
+                            <h5 class="mt-3" id="profileName">[Name]</h5>
+                            <p class="text-muted">Passenger</p>
+                            <button class="btn btn-primary btn-sm animate-button mt-2" onclick="document.getElementById('profilePicInput').click()">Change Picture</button>
+                            <input type="file" id="profilePicInput" style="display: none;" accept="image/*" onchange="uploadProfilePic(event)">
+                        </div>
+                    </div>
+                    <!-- Profile Details -->
+                    <div class="col-md-8">
+                        <div class="profile-details-container">
+                            <h3 class="text-primary mb-3">Personal Information</h3>
+                            <form id="profileForm">
+                                <div class="mb-3">
+                                    <label for="fullName" class="form-label text-muted">Full Name</label>
+                                    <input type="text" class="form-control" id="fullName" value="[Name]" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="email" class="form-label text-muted">Email</label>
+                                    <input type="email" class="form-control" id="email" value="[Email]" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="phone" class="form-label text-muted">Phone</label>
+                                    <input type="tel" class="form-control" id="phone" value="[Phone]">
+                                </div>
+                                <div class="mb-3">
+                                    <label for="gender" class="form-label text-muted">Gender</label>
+                                    <select class="form-control" id="gender">
+                                        <option value="Male">Male</option>
+                                        <option value="Female">Female</option>
+                                        <option value="Other">Other</option>
+                                    </select>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="dob" class="form-label text-muted">Date of Birth</label>
+                                    <input type="date" class="form-control" id="dob" value="[DOB]">
+                                </div>
+                                <div class="text-center mt-4">
+                                    <button type="submit" class="btn btn-primary btn-lg rounded-pill py-2 px-4 animate-button">
+                                        <i class="fas fa-save"></i> Save Changes
+                                    </button>
+                                </div>
+                            </form>
+                            <div id="formMessage" class="alert d-none mt-3"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="bg-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+            <div class="circle circle-3"></div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>

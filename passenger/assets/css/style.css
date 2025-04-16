@@ -1,0 +1,1442 @@
+/* passenger/css/style.css */
+
+/* Reset Styles (Applies to All Pages) */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+    background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
+}
+
+/* --------------------------------------- */
+/* Navbar Styling (Applies to All Pages) */
+/* --------------------------------------- */
+.navbar {
+    padding: 15px 0;
+    transition: background-color 0.3s ease;
+}
+
+.navbar.fixed-top {
+    background-color: #ffffff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    transition: transform 0.3s ease;
+}
+
+.logo:hover {
+    transform: rotate(360deg);
+}
+
+.brand-text {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #007bff;
+    margin-left: 10px;
+}
+
+.nav-link {
+    font-weight: 500;
+    color: #007bff !important;
+    transition: color 0.3s ease;
+    padding: 8px 15px;
+}
+
+.nav-link:hover {
+    color: #0056b3 !important;
+}
+
+.nav-icon i {
+    margin-right: 8px;
+}
+
+.navbar-nav .nav-item {
+    margin-right: 15px;
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-right: 0;
+}
+
+.btn {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+}
+
+.nav-link.btn {
+    padding: 8px 20px;
+    font-weight: 500;
+}
+
+.nav-link.btn-outline-primary {
+    color: #007bff;
+    border-color: #007bff;
+    transition: all 0.3s ease;
+}
+
+.nav-link.btn-outline-primary:hover {
+    background-color: #007bff;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.nav-link.btn-outline-primary.disabled {
+    background-color: #e6f0fa;
+    color: #007bff;
+    opacity: 0.7;
+}
+
+.signup-btn {
+    background-color: #007bff;
+    color: #ffffff !important;
+    transition: all 0.3s ease;
+}
+
+.signup-btn:hover {
+    background-color: #0056b3;
+    color: #ffffff !important;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.signup-btn.disabled {
+    background-color: #e6f0fa;
+    color: #007bff !important;
+    opacity: 0.7;
+}
+
+/* --------------------------------------- */
+/* Welcome Page (Home Page) Styling */
+/* --------------------------------------- */
+.hero-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    color: #fff;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-section .container {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #003087; /* Dark blue for contrast */
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.4), -2px -2px 6px rgba(0, 123, 255, 0.2); /* Enhanced shadow */
+    margin-bottom: 1.5rem;
+    animation: fadeInSlideUp 1.5s ease-out forwards; /* New animation */
+    opacity: 0; /* Initial state for animation */
+}
+
+.hero-section p {
+    font-size: 1.5rem;
+    color: #003087; /* Dark blue for contrast */
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.3), -1px -1px 4px rgba(0, 123, 255, 0.1); /* Subtle shadow */
+    margin-bottom: 2rem;
+    animation: fadeInBounce 1.8s ease-out forwards 0.3s; /* New animation with delay */
+    opacity: 0; /* Initial state for animation */
+}
+
+.animate-button {
+    transition: all 0.3s ease;
+    border-radius: 30px;
+    background-color: #007bff;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulseButton 2s infinite ease-in-out; /* New animation */
+}
+
+.animate-button:hover {
+    transform: translateY(-5px);
+    background-color: #0056b3;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.animate-button a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+/* --------------------------------------- */
+/* Sign Up Page Styling */
+/* --------------------------------------- */
+.signup-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.signup-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.card h2, .card h3, .card h4 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #003087;
+}
+
+.form-select, .form-control {
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    background-color: #ffffff;
+}
+
+#startScan {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    font-size: 1rem;
+    color: #007bff;
+    border: 1px solid #007bff;
+}
+
+#startScan:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#preview {
+    min-height: 20px;
+}
+
+.form-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003087 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.btn-primary a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border: 2px solid #007bff;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 12px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    width: 100%;
+}
+
+.btn-secondary:hover {
+    background-color: #5a6268;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.btn-success {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 12px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+}
+
+.btn-success:hover {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+.btn-info {
+    background: linear-gradient(135deg, #17a2b8 0%, #138496 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+}
+
+.btn-info:hover {
+    background: linear-gradient(135deg, #138496 0%, #117a8b 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(23, 162, 184, 0.4);
+}
+
+.btn-danger {
+    background: linear-gradient(135deg, #dc3545 0%, #c82333 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 8px 20px;
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    box-shadow: 0 4px 15px rgba(220, 53, 69, 0.3);
+}
+
+.btn-danger:hover {
+    background: linear-gradient(135deg, #c82333 0%, #bd2130 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(220, 53, 69, 0.4);
+}
+
+.text-primary {
+    color: #007bff !important;
+    transition: color 0.3s ease;
+}
+
+.text-primary:hover {
+    color: #0056b3 !important;
+}
+
+/* --------------------------------------- */
+/* Dashboard Page Styling */
+/* --------------------------------------- */
+.signup-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.circle {
+    position: absolute;
+    background: linear-gradient(135deg, #ffffff 0%, #007bff 100%);
+    border-radius: 50%;
+    animation: float 6s infinite ease-in-out;
+    opacity: 0.8; /* Added for visibility against blue background */
+    border: 2px solid #007bff; /* Bold blue border for contrast */
+}
+
+.circle-1 {
+    width: 200px;
+    height: 200px;
+    top: 15%;
+    left: 5%;
+    border: 2px solid #007bff;
+}
+
+.circle-2 {
+    width: 150px;
+    height: 150px;
+    top: 70%;
+    right: 10%;
+    animation-delay: 2s;
+    border: 2px solid #007bff;
+}
+
+.circle-3 {
+    width: 120px;
+    height: 120px;
+    top: 40%;
+    left: 80%;
+    animation-delay: 4s;
+    border: 2px solid #007bff;
+}
+
+.dashboard-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 2.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.animate-welcome {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #007bff;
+    text-shadow: 0 2px 5px rgba(0, 123, 255, 0.2);
+    animation: fadeInDown 1.2s ease-in-out;
+    /* Updated by Grok 3 - Added styling for Font Awesome icons in headings */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px; /* Space between icon and text */
+}
+
+.animate-welcome i {
+    /* Updated by Grok 3 - Added styling for Font Awesome icons */
+    font-size: 2rem; /* Adjust icon size */
+    color: #007bff; /* Match icon color with text */
+}
+
+.ticket-cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+}
+
+.ticket-card {
+    background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    flex: 1 1 calc(50% - 1rem);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card h5 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #003087;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-card p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.3rem;
+}
+
+.ticket-card .badge {
+    font-size: 0.9rem;
+    padding: 0.4rem 0.8rem;
+    border-radius: 20px;
+    background: #007bff;
+    color: #ffffff;
+}
+
+/* --------------------------------------- */
+/* Ticket Booking Page Styling */
+/* --------------------------------------- */
+.booking-form {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.booking-form .form-select, .booking-form .form-control {
+    background-color: #ffffff;
+    color: #003087;
+}
+
+.booking-form .form-select:focus, .booking-form .form-control:focus {
+    background-color: #ffffff;
+}
+
+#groupTravelSection {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    padding: 2rem;
+    border-radius: 15px;
+    border: 2px solid #007bff;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#groupTravelSection .form-control {
+    margin-bottom: 1rem;
+}
+
+#groupTravelSection .btn-outline-primary i {
+    margin-right: 5px;
+}
+
+#scanResultMain, #scanResult1 {
+    font-size: 0.9rem;
+}
+
+/* --------------------------------------- */
+/* Payment Page Styling */
+/* --------------------------------------- */
+.payment-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.payment-methods {
+    display: grid;
+    gap: 1.5rem;
+}
+
+.payment-method-card {
+    background: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 12px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+}
+
+.payment-method-card:hover {
+    background: #e6f0fa;
+    transform: translateY(-3px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.payment-method-card .form-check-input {
+    margin-top: 0;
+    cursor: pointer;
+}
+
+.payment-method-card .form-check-label {
+    font-weight: 600;
+    color: #003087;
+    margin-left: 10px;
+    cursor: pointer;
+}
+
+.payment-method-card .form-check-label i {
+    font-size: 1.2rem;
+    color: #007bff;
+}
+
+.payment-fields {
+    background: #ffffff;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 2px solid #007bff;
+    margin-top: 1rem;
+}
+
+.input-group {
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.input-group .form-control {
+    border: none;
+    box-shadow: none;
+}
+
+.input-group .input-group-text {
+    background: #007bff;
+    color: #ffffff;
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.input-group .input-group-text:hover {
+    background: #0056b3;
+}
+
+.confirm-payment-btn {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%);
+    font-size: 1.2rem;
+    padding: 14px;
+}
+
+.confirm-payment-btn:hover {
+    background: linear-gradient(135deg, #218838 0%, #1e7e34 100%);
+}
+
+.back-btn {
+    font-size: 1rem;
+    padding: 10px 20px;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e6f0fa;
+    color: #0056b3;
+    transform: translateY(-2px);
+}
+
+#successMessage {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+#successMessage .alert {
+    background: #d4edda;
+    border: none;
+    font-weight: 600;
+    color: #155724;
+}
+
+#successMessage .alert i {
+    margin-right: 8px;
+    color: #28a745;
+}
+
+/* --------------------------------------- */
+/* Ticket Confirmation Page Styling */
+/* --------------------------------------- */
+.confirmation-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.confirmation-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.qr-code-container {
+    background: #ffffff;
+    border: 2px solid #007bff;
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease;
+}
+
+.qr-code-container:hover {
+    transform: scale(1.05);
+}
+
+.qr-code {
+    width: 150px;
+    height: 150px;
+    border-radius: 10px;
+    animation: pulse 2s infinite ease-in-out;
+}
+
+.ticket-details-container {
+    background: #e6f0fa;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.ticket-details-card {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+}
+
+.ticket-details-card .table {
+    margin-bottom: 0;
+}
+
+.ticket-details-card .table td {
+    padding: 0.75rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #e6f0fa;
+}
+
+.ticket-details-card .table tr:last-child td {
+    border-bottom: none;
+}
+
+.ticket-details-card .text-muted {
+    font-weight: 500;
+    color: #666;
+}
+
+.ticket-details-card .fw-bold {
+    color: #003087;
+    font-size: 1.1rem;
+}
+
+#goToDashboardBtn {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    font-size: 1.2rem;
+    padding: 12px 30px;
+}
+
+#goToDashboardBtn:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003087 100%);
+}
+
+/* --------------------------------------- */
+/* Profile Page Styling */
+/* --------------------------------------- */
+.profile-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.profile-picture-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 1.5rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.profile-picture-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.profile-pic {
+    border: 4px solid #007bff;
+    transition: transform 0.3s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.05);
+}
+
+.animate-profile-pic {
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.profile-details-container {
+    background: #ffffff;
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+.profile-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------------------------------- */
+/* My Tickets Page Styling */
+/* --------------------------------------- */
+.my-tickets-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.ticket-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.ticket-card {
+    background: linear-gradient(135deg, #e6f0fa 0%, #ffffff 100%);
+    border-radius: 12px;
+    padding: 1.5rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.ticket-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.ticket-card .card-title {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #003087;
+    margin-bottom: 1rem;
+}
+
+.ticket-card .card-text {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-card .card-text strong {
+    color: #003087;
+}
+
+.ticket-card .badge.bg-success {
+    background: linear-gradient(135deg, #28a745 0%, #218838 100%) !important;
+}
+
+.ticket-card .badge.bg-warning {
+    background: linear-gradient(135deg, #ffc107 0%, #e0a800 100%) !important;
+    color: #333;
+}
+
+.my-tickets-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* Modal Styling for Ticket Details */
+.ticket-details-modal .modal-content {
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    border: none;
+}
+
+.ticket-details-modal .modal-header {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #ffffff;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+    border-bottom: none;
+}
+
+.ticket-details-modal .modal-title {
+    font-weight: 600;
+    font-size: 1.5rem;
+}
+
+.ticket-details-modal .modal-body {
+    padding: 2rem;
+}
+
+.ticket-details-modal .modal-body p {
+    font-size: 1rem;
+    color: #666;
+    margin-bottom: 0.5rem;
+}
+
+.ticket-details-modal .modal-body p strong {
+    color: #003087;
+}
+
+.ticket-details-modal .modal-footer {
+    border-top: none;
+    padding: 1rem 2rem;
+}
+
+.ticket-details-modal .btn-secondary {
+    background: linear-gradient(135deg, #6c757d 0%, #5a6268 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    padding: 10px 20px;
+    font-size: 1rem;
+}
+
+.ticket-details-modal .btn-secondary:hover {
+    background: linear-gradient(135deg, #5a6268 0%, #495057 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+/* --------------------------------------- */
+/* Station Verification Page Styling */
+/* --------------------------------------- */
+.verification-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.camera-feed-container, .qr-scan-container {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 15px;
+    padding: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+}
+
+.camera-feed-container:hover, .qr-scan-container:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+
+.camera-feed, .qr-feed {
+    width: 100%;
+    height: 200px;
+    background: #e6f0fa;
+    border: 2px solid #007bff;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: border-color 0.3s ease;
+}
+
+.camera-feed:hover, .qr-feed:hover {
+    border-color: #0056b3;
+}
+
+.verification-status {
+    background: #ffffff;
+    border-radius: 10px;
+    padding: 1rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+#statusText.verified {
+    color: #28a745;
+    font-weight: 600;
+}
+
+#statusText.failed {
+    color: #dc3545;
+    font-weight: 600;
+}
+
+.verification-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------------------------------- */
+/* Access Granted Page Styling */
+/* --------------------------------------- */
+.access-granted-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.access-granted-section .confirmation-card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+    text-align: center;
+}
+
+.access-granted-section .text-success {
+    color: #28a745 !important;
+    transition: color 0.3s ease;
+}
+
+.access-granted-section .text-success:hover {
+    color: #218838 !important;
+}
+
+.access-granted-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------------------------------- */
+/* Access Denied Page Styling */
+/* --------------------------------------- */
+.access-denied-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.access-denied-section .card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+    text-align: center;
+}
+
+.access-denied-section .text-danger {
+    color: #dc3545 !important;
+    transition: color 0.3s ease;
+}
+
+.access-denied-section .text-danger:hover {
+    color: #c82333 !important;
+}
+
+.access-denied-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------------------------------- */
+/* Contact Support Page Styling */
+/* --------------------------------------- */
+.contact-support-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.contact-support-section .card {
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    border-radius: 20px;
+    padding: 3rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 1s ease-in-out;
+    text-align: center;
+}
+
+.contact-support-section .bg-elements {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+/* --------------------------------------- */
+/* Shared Animations (Used in All Pages) */
+/* --------------------------------------- */
+@keyframes fadeInDown {
+    0% { opacity: 0; transform: translateY(-50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInUp {
+    0% { opacity: 0; transform: translateY(50px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+    100% { transform: scale(1); }
+}
+
+/* New Animations for Welcome Page Text */
+@keyframes fadeInSlideUp {
+    0% { opacity: 0; transform: translateY(30px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeInBounce {
+    0% { opacity: 0; transform: translateY(20px); }
+    50% { opacity: 0.5; transform: translateY(-10px); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes pulseButton {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+}
+
+/* --------------------------------------- */
+/* Responsive Design (Applies to All Pages) */
+/* --------------------------------------- */
+@media (max-width: 768px) {
+    .hero-section, .signup-section, .profile-section, .my-tickets-section, .confirmation-section, .verification-section, .access-granted-section, .access-denied-section, .contact-support-section {
+        padding-top: 100px;
+    }
+
+    .hero-section h1, .card h2, .animate-welcome {
+        font-size: 1.8rem;
+    }
+
+    .hero-section p {
+        font-size: 1.2rem;
+    }
+
+    .animate-button, .btn-primary, #startScan {
+        padding: 10px;
+        font-size: 1rem;
+    }
+
+    .circle-1, .circle-2, .circle-3 {
+        display: none;
+    }
+
+    .card, .dashboard-card, .confirmation-card, .profile-picture-container, .profile-details-container {
+        padding: 1.5rem;
+    }
+
+    .ticket-card {
+        flex: 1 1 100%;
+    }
+
+    .booking-form, .payment-form {
+        max-width: 100%;
+    }
+
+    #groupTravelSection {
+        padding: 1rem;
+    }
+
+    .payment-methods {
+        grid-template-columns: 1fr;
+    }
+
+    .payment-method-card {
+        padding: 0.8rem;
+    }
+
+    .input-group .input-group-text {
+        padding: 8px;
+    }
+
+    .confirm-payment-btn {
+        font-size: 1rem;
+        padding: 10px;
+    }
+
+    .back-btn {
+        font-size: 0.9rem;
+        padding: 8px 15px;
+    }
+
+    .qr-code-container {
+        margin-bottom: 1.5rem;
+    }
+
+    .qr-code {
+        width: 120px;
+        height: 120px;
+    }
+
+    .ticket-details-container {
+        padding: 1.5rem;
+    }
+
+    .ticket-list {
+        padding: 0 1rem;
+    }
+
+    .ticket-card .card-title {
+        font-size: 1.2rem;
+    }
+
+    .ticket-card .card-text {
+        font-size: 0.9rem;
+    }
+
+    #goToDashboardBtn {
+        font-size: 1rem;
+        padding: 10px 20px;
+    }
+
+    .ticket-details-modal .modal-title {
+        font-size: 1.2rem;
+    }
+
+    .ticket-details-modal .modal-body {
+        padding: 1.5rem;
+    }
+
+    .ticket-details-modal .modal-body p {
+        font-size: 0.9rem;
+    }
+
+    .navbar-nav .nav-item {
+        margin-right: 10px;
+    }
+
+    .camera-feed, .qr-feed {
+        height: 150px;
+    }
+
+    .camera-feed-container, .qr-scan-container {
+        padding: 1.5rem;
+    }
+}
+
+/* --------------------------------------- */
+/* Navbar Scroll Effect (Applies to All Pages) */
+/* --------------------------------------- */
+.navbar.scrolled {
+    background-color: #f8f9fa !important;
+    transition: background-color 0.3s ease;
+}
+
+/* --------------------------------------- */
+/* Login Page Styling */
+/* --------------------------------------- */
+.login-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #007bff 0%, #e6f0fa 100%);
+    position: relative;
+    overflow: hidden;
+    padding-top: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-section .container {
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    padding: 2.5rem;
+    animation: fadeInUp 1s ease-in-out;
+}
+
+.card h2 {
+    font-size: 2rem;
+    font-weight: 700;
+    color: #007bff;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-label {
+    font-weight: 600;
+    color: #003087;
+}
+
+.form-select, .form-control {
+    border-radius: 10px;
+    border: 2px solid #007bff;
+    transition: all 0.3s ease;
+    padding: 12px;
+    font-size: 1rem;
+    background-color: #ffffff;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+
+.form-select:focus, .form-control:focus {
+    border-color: #0056b3;
+    box-shadow: 0 0 8px rgba(0, 123, 255, 0.4);
+    background-color: #ffffff;
+}
+
+#startFaceScan {
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    padding: 10px;
+    font-size: 1rem;
+    color: #007bff;
+    border: 1px solid #007bff;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#startFaceScan:hover {
+    background-color: #0056b3;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+#preview {
+    min-height: 20px;
+}
+
+.form-text {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    border-radius: 30px;
+    transition: all 0.3s ease;
+    font-weight: 600;
+    padding: 12px 25px;
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    width: 100%;
+    box-shadow: 0 4px 15px rgba(0, 123, 255, 0.3);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #0056b3 0%, #003087 100%);
+    transform: translateY(-5px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.4);
+}
+
+.btn-primary a {
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.btn-outline-primary {
+    color: #007bff;
+    border: 2px solid #007bff;
+    background: #ffffff;
+    transition: all 0.3s ease;
+}
+
+.btn-outline-primary:hover {
+    background: #007bff;
+    color: #ffffff;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-link {
+    padding: 0;
+    text-decoration: none;
+    background-color: transparent;
+    border: none;
+    color: #007bff;
+    transition: color 0.3s ease, text-decoration 0.3s ease;
+}
+
+.btn-link:hover {
+    color: #0056b3;
+    text-decoration: underline;
+}
+
+/* Reset Modal Styling */
+#resetPasswordModal .modal-content {
+    border-radius: 15px;
+    border: 2px solid #007bff;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+}
+
+#resetPasswordModal .modal-header {
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    color: #ffffff;
+    border-top-left-radius: 13px;
+    border-top-right-radius: 13px;
+    border-bottom: none;
+}
+
+#resetPasswordModal .modal-body {
+    padding: 2rem;
+}
+
+#resetPasswordModal #resetMessage {
+    font-weight: 500;
+}
+
+#resetMessage.success {
+    color: #28a745;
+}
+
+#resetMessage.error {
+    color: #dc3545;
+}

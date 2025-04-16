@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticket Booking - FaceS</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- Google Fonts for Modern Typography -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../../assets/css/style.css">
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-lg fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="dashboard.html">
+                <img src="../../assets/images/logo.png" alt="FaceS Logo" width="50" class="logo">
+                <span class="brand-text">FaceS</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon btn btn-outline-primary" href="ticket-booking.html"><i class="fas fa-train"></i> Book Ticket</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon btn btn-outline-primary" href="my-tickets.html"><i class="fas fa-ticket-alt"></i> My Tickets</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link nav-icon btn btn-outline-primary" href="profile.html"><i class="fas fa-user"></i> Profile</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-outline-primary px-4" href="#" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Ticket Booking Section -->
+    <section class="signup-section">
+        <div class="container mt-5 pt-5">
+            <h1 class="text-center mb-4 text-white animate-welcome"><i class="fas fa-train"></i> Ticket Booking</h1>
+            <div class="card shadow-lg p-4 border-primary dashboard-card">
+                <form id="bookingForm" class="booking-form">
+                    <div class="mb-4">
+                        <label for="sourceStation" class="form-label">Source Station</label>
+                        <select class="form-select" id="sourceStation" required>
+                            <option value="" disabled selected>Select Source</option>
+                            <option value="mumbai">Mumbai</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="kolkata">Kolkata</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="destinationStation" class="form-label">Destination Station</label>
+                        <select class="form-select" id="destinationStation" required>
+                            <option value="" disabled selected>Select Destination</option>
+                            <option value="delhi">Delhi</option>
+                            <option value="kolkata">Kolkata</option>
+                            <option value="mumbai">Mumbai</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="trainSelect" class="form-label">Select Train</label>
+                        <select class="form-select" id="trainSelect" required>
+                            <option value="" disabled selected>Select Train</option>
+                            <option value="train1">Rajdhani Express</option>
+                            <option value="train2">Shatabdi Express</option>
+                            <option value="train3">Duronto Express</option>
+                        </select>
+                    </div>
+                    <div class="mb-4">
+                        <label for="travelDate" class="form-label">Date</label>
+                        <input type="date" class="form-control" id="travelDate" required>
+                    </div>
+                    <div class="mb-4">
+                        <button type="button" class="btn btn-primary btn-lg rounded-pill py-2 px-4 w-100" id="groupTravelBtn">
+                            <i class="fas fa-users"></i> Group Travel
+                        </button>
+                    </div>
+                    <div id="formMessage" class="alert d-none"></div>
+                    <button type="submit" class="btn btn-primary btn-lg rounded-pill py-2 px-4 w-100" id="proceedToPaymentBtn">
+                        <span id="proceedBtnText">Proceed to Payment</span>
+                        <span id="proceedBtnSpinner" class="spinner-border spinner-border-sm d-none" role="status" aria-hidden="true"></span>
+                    </button>
+                </form>
+                <!-- Group Travel Section (Hidden by Default) -->
+                <div id="groupTravelSection" class="mt-4" style="display: none;">
+                    <h3 class="mb-3 text-primary">Group Travel Booking</h3>
+                    <p class="text-muted mb-3">Main person (logged-in user) fills the details below. Add other passengers and scan their faces.</p>
+                    <!-- Main Person Details -->
+                    <div class="mb-4">
+                        <h4 class="mb-2 text-primary">Main Person Details</h4>
+                        <p><strong>Name:</strong> <span id="mainPersonName">[Logged-in User]</span></p>
+                        <p><strong>ID:</strong> <span id="mainPersonId">[User ID]</span></p>
+                        <button type="button" class="btn btn-outline-primary mt-2" id="scanMainPerson" data-bs-toggle="modal" data-bs-target="#faceScanModal">
+                            <i class="fas fa-camera"></i> Scan Main Person Face
+                        </button>
+                        <small id="scanResultMain" class="form-text text-danger d-none">Scan failed. ID not found.</small>
+                    </div>
+                    <!-- Other Passengers Section -->
+                    <h4 class="mb-2 text-primary">Add Other Passengers</h4>
+                    <p class="text-muted mb-3">New passengers must sign up first. Existing passengers will be auto-added after scan.</p>
+                    <div id="groupMembers" class="mb-4">
+                        <!-- Passenger 1 -->
+                        <div class="mb-3" id="memberContainer1">
+                            <label for="memberName1" class="form-label">Passenger 1 Name</label>
+                            <input type="text" class="form-control" id="memberName1" placeholder="Enter name">
+                            <button type="button" class="btn btn-outline-primary mt-2" id="scanMember1" data-bs-toggle="modal" data-bs-target="#faceScanModal">
+                                <i class="fas fa-camera"></i> Scan Face
+                            </button>
+                            <small id="scanResult1" class="form-text text-danger d-none">Scan failed. ID not found or new user.</small>
+                        </div>
+                    </div>
+                    <button type="button" class="btn btn-primary btn-lg rounded-pill py-2 px-4 w-100" id="addMemberBtn">
+                        Add Another Passenger
+                    </button>
+                    <button type="button" class="btn btn-success btn-lg rounded-pill py-2 px-4 w-100 mt-3" id="confirmGroupBtn">
+                        Confirm Group Booking
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="bg-elements">
+            <div class="circle circle-1"></div>
+            <div class="circle circle-2"></div>
+        </div>
+    </section>
+
+    <!-- Face Scan Modal -->
+    <div class="modal fade" id="faceScanModal" tabindex="-1" aria-labelledby="faceScanModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="faceScanModalLabel">Face Scan</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <video id="video" width="320" height="240" autoplay></video>
+                    <canvas id="canvas" width="320" height="240" style="display:none;"></canvas>
+                    <button type="button" class="btn btn-primary mt-3" id="captureFace">Capture Face</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
+    <!-- Custom JS -->
+    <script src="../../assets/js/script.js"></script>
+</body>
+</html>
