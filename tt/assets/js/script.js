@@ -37,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function () {
                     scanResult.textContent = 'Verified';
                     alert('Login successful! Redirecting to dashboard...');
                     setTimeout(() => {
-                        redirectTo('/tt/assets/pages/tt-dashboard.html'); // Absolute path to dashboard
+                        redirectTo('../tt/assets/pages/tt-dashboard.html'); // Absolute path to dashboard
                     }, 1000);
                 } else {
                     scanResult.classList.remove('verified');
