@@ -442,8 +442,8 @@ document.addEventListener('DOMContentLoaded', async function () {
                             <p class="card-text"><strong>Amount:</strong> ₹${ticket.total_amount || 'N/A'}</p>
                             <p class="card-text"><strong>Status:</strong> <span class="badge ${ticket.payment_status === 'confirmed' ? 'bg-success' : 'bg-warning text-dark'}">${ticket.payment_status || 'Pending'}</span></p>
                             <div class="mt-3">
-                                <a href="#" class="btn btn-info btn-sm me-2 animate-button view-details-btn" data-ticket-id="${ticket.ticket_id || ''}">View Details</a>
-                                <a href="#" class="btn btn-danger btn-sm animate-button cancel-ticket-btn" data-ticket-id="${ticket.ticket_id || ''}">Cancel Ticket</a>
+                                <button class="btn btn-info btn-sm me-2 animate-button view-details-btn" data-ticket-id="${ticket.ticket_id || ''}">View Details</button>
+                                <button class="btn btn-outline-danger btn-sm animate-button cancel-ticket-btn" data-ticket-id="${ticket.ticket_id || ''}"><i class="fas fa-trash"></i> Cancel Ticket</button>
                             </div>
                         </div>
                     `;
